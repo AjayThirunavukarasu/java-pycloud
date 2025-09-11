@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>student profile</title>
+    <link rel="stylesheet" th:href="@{/css/std-accountNew.css}">
+    <link rel="stylesheet" th:href="@{/css/stddashboard.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+   
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 fixed">
+        <a class="navbar-brand mx-2" th:href="@{/home}">
+            <h2 style="color: orangered;">TN <span style="color: #102c58;">-Tuitions</span></h2>
+          </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav std-nav ml-auto">
+                <a class="nav-item nav-link  "  th:href="@{/StdAccount}"><i class="fa-solid fa-circle-user"
+                    style="color: #4fb560;"></i></a>
+                <a class="nav-item nav-link  "  th:href="@{/StdNotification}"><i class="fa-regular fa-bell text-center"></i></a>
+                <a class="nav-item nav-link  "  th:href="@{/home}"><i
+                    class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </div>
+        </div>
+      </nav>
+
+
+      <!-- profile -->
+      <div class="dashboard content "  >
+        <div class=" col-lg-12 std-profile-box p-3">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-12">
+                    <div class="std-profile px-3">
+                        <div class="title-heading p-2">
+                            
+                            <p>Student Profile</p>
+                        </div>
+                        
+                         <div class="row details">
+                                <div class="col-sm-6"> <label for="fullName"  >Full Name</label> <p  id="nameDisplay">Student Name</p></div>
+                                <div class="col-sm-6"> <label for="firstName" >User Name</label> <p id="usernameDisplay">Inba444</p></div>
+                                <div class="col-sm-6"> <label for="firstName">Mobile</label> <p id="mobileDisplay">6380090019</p></div>
+                                <div class="col-sm-6"> <label for="firstName">Roll No</label> <p>20-PH-035</p></div>
+                                <div class="col-sm-6"> <label for="firstName">Email</label> <p  id="emailDisplay">B.inba@gmail.com</p></div>
+                                <div class="col-sm-6"> <label for="firstName" >Date of Birth</label> <p id="dobDisplay">11-10-2002</p></div>
+                               
+                                <div class="col-sm-6">  <a href="#" class="btn change-password-btn " data-toggle="modal" data-target="#editModal">Edit </a></div>
+
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="col-lg-4 col-md-12 justify-content-center">
+                        <div class="profile-img mt-4 ml-3 justify-content-center">
+                            <img src="" alt="Profile Image" id="profileImgInput" style="display: none;">
+                            <i class="fa-solid fa-user-tie db-logos" id="profileIcon"></i>
+                        </div>
+                    
+                        <input type="file" id="imageUpload" style="display: none;">
+                        <a href="#" class="btn uplod-img-btn" onclick="document.getElementById('imageUpload').click();">Update Profile Picture</a>
+                    </div>
+
+
+                </div>
+            </div>
+       
+
+         <!-- Edit Modal Structure -->
+         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" style="border-radius: 20px;">
+                  <div class="modal-header " style="background-color: orangered;">
+                      <h5 class="modal-title" id="editModalLabel">Edit User Information</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form id="editForm">
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
+                                  <label for="name">Name</label>
+                                  <input type="text" class="form-control" id="name" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="email">Email ID</label>
+                                  <input type="email" class="form-control" id="email" required>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
+                                  <label for="mobile">Mobile Number</label>
+                                  <input type="tel" class="form-control" id="mobile" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="dob">Date of Birth</label>
+                                  <input type="date" class="form-control" id="dob" required>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
+                                  <label for="username">Username</label>
+                                  <input type="text" class="form-control" id="username" required>
+                              </div>
+                              
+                          </div>
+                          <button type="button" class="btn btn-primary" onclick="updateInfo()">Update</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+              <!-- modal end -->
+        
+    </div>
+       <!-- end -->
+  <!-- sidebar start -->
+  <div class="navbar sidebar  p-0 " style="background-color: #102c58;">
+    <div class="navbar-nav  w-100 mb-5">
+        <a class="nav-item nav-link text-center " 
+        th:href="@{/StdDashboard}"><span><i class="fa-solid fa-address-card db-logos"></i></span>Dash Board</a>
+      <a class="nav-item nav-link text-center " th:href="@{/schedule}"><span><i
+            class="fa-solid fa-calendar-days db-logos"></i></span>My Schedule</a>
+      <a class="nav-item nav-link text-center " th:href="@{/StdTeacher}"><span><i
+            class="fa-solid fa-user-tie db-logos"></i></span>Teachers</a>
+      <a class="nav-item nav-link text-center" style="background-color: orangered;"  th:href="@{/StdAccount}"> <span><i
+            class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560;"></i></span>My Account</a>
+      <a class="nav-item nav-link "  th:href="@{/ExploreTeacher}"><span><i
+            class="fa-sharp-duotone fa-solid fa-magnifying-glass db-logos"></i></span>Explore Teacher</a>
+        
+
+    </div>
+</div>
+    <!-- sidebar end -->
+
+
+
+
+
+
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+     <script>
+        // Function to populate the modal with current user data
+        function populateModal() {
+            document.getElementById('name').value = document.getElementById('nameDisplay').innerText;
+            document.getElementById('email').value = document.getElementById('emailDisplay').innerText;
+            document.getElementById('mobile').value = document.getElementById('mobileDisplay').innerText;
+            document.getElementById('dob').value = document.getElementById('dobDisplay').innerText;
+            document.getElementById('username').value = document.getElementById('usernameDisplay').innerText;
+        }
+      
+        // Function to validate inputs
+        function validateInputs() {
+            var isValid = true;
+      
+            // Validate mobile number
+            var mobile = document.getElementById('mobile');
+            var mobilePattern = /^[0-9]+$/; // Only numbers allowed
+            if (!mobile.value.match(mobilePattern)) {
+                mobile.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                mobile.classList.remove('is-invalid');
+            }
+      
+            // Validate email
+            var email = document.getElementById('email');
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
+            if (!email.value.match(emailPattern)) {
+                email.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                email.classList.remove('is-invalid');
+            }
+      
+            return isValid;
+        }
+      
+        // Function to update the user information
+        function updateInfo() {
+            // Validate inputs before updating
+            if (!validateInputs()) {
+                return;
+            }
+      
+            // Get form values
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var mobile = document.getElementById('mobile').value;
+            var dob = document.getElementById('dob').value;
+            var username = document.getElementById('username').value;
+      
+            // Update the container with new data
+            document.getElementById('nameDisplay').innerText = name;
+            document.getElementById('emailDisplay').innerText = email;
+            document.getElementById('mobileDisplay').innerText = mobile;
+            document.getElementById('dobDisplay').innerText = dob;
+            document.getElementById('usernameDisplay').innerText = username;
+      
+            // Close the modal
+            $('#editModal').modal('hide');
+      
+            // Show success alert
+            alert('Updated successfully!');
+        }
+      
+        // Populate modal with current data on open
+        $('#editModal').on('show.bs.modal', populateModal);
+      
+      </script>
+      <script>
+        document.getElementById('imageUpload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgElement = document.getElementById('profileImgInput');
+                    imgElement.src = e.target.result;
+                    imgElement.style.display = 'block';  // Show the image
+                    document.getElementById('profileIcon').style.display = 'none';  // Hide the icon
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+  </body>
+</html>

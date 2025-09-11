@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Dashboard</title>
+  <link rel="stylesheet" th:href="@{/css/stddashboard.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 ">
+    <a class="navbar-brand mx-2" th:href="@{/home}">
+      <h2 style="color: orangered;">TN <span style="color: #102c58;">-Tuitions</span></h2>
+    </a>
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav std-nav ml-auto">
+        <a class="nav-item nav-link  "  th:href="@{/StdAccount}"><i class="fa-solid fa-circle-user"
+            style="color: #4fb560;"></i></a>
+        <a class="nav-item nav-link  "  th:href="@{/StdNotification}"><i class="fa-regular fa-bell text-center"></i></a>
+        <a class="nav-item nav-link  "  th:href="@{/home}"><i
+            class="fa-solid fa-arrow-right-from-bracket"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!-- Sidebar -->
+  <!-- sidebar start -->
+  <div class="navbar sidebar p-0 " style="background-color: #102c58;">
+    <div class="navbar-nav  w-100 mb-5">
+      <a class="nav-item nav-link text-center " style="background-color: orangered;"
+        href="../studentprofile/std-dashboardNew.html"><span><i class="fa-solid fa-address-card db-logos"></i></span>Dash Board</a>
+      <a class="nav-item nav-link text-center " th:href="@{/schedule}"><span><i
+            class="fa-solid fa-calendar-days db-logos"></i></span>My Schedule</a>
+      <a class="nav-item nav-link text-center "  th:href="@{/StdTeacher}"><span><i
+            class="fa-solid fa-user-tie db-logos"></i></span>Teachers</a>
+      <a class="nav-item nav-link text-center"  th:href="@{/StdAccount}"> <span><i
+            class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560;"></i></span>My Account</a>
+      <a class="nav-item nav-link "  th:href="@{/ExploreTeacher}"><span><i
+            class="fa-sharp-duotone fa-solid fa-magnifying-glass db-logos"></i></span>Explore Teacher</a>
+    </div>
+  </div>
+  <!-- sidebar end -->
+  <div class="dashboard content  ">
+    <div class="row p-3  ">
+      <div class="col-lg-4 col-md-6  col-sm-6 pt-3 ">
+        <div class="card  w-100">
+          <div class="card-body db-card-body p-0">
+            <h2 class="card-title db-card-title mt-2 "> <i class="fa fa-dashboard "></i></h2>
+            <a  th:href="@{/StdDashboard}" style="text-decoration: none;">
+              <div class="db-card-text p-2">
+                <h5 style="color: orangered;">Dash Board</h5>
+                <p>View Details</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6  pt-3">
+        <div class="card  w-100">
+          <div class="card-body db-card-body p-0">
+            <h2 class="card-title db-card-title mt-2 " style="color: #00cf34; background-color: #e2fae8;"> <i
+                class="fa fa-user fa-fw "></i></h2>
+            <a  th:href="@{/StdAccount}" style="text-decoration: none;">
+              <div class="db-card-text p-2">
+                <h5 class="pt-1" style="color:#00cf34 ;">Profile</h5>
+                <p>View Details</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 pt-3 ">
+        <div class="card  w-100">
+          <div class="card-body db-card-body p-0">
+            <h2 class="card-title db-card-title mt-2 " style="color: #9e3ecc; background-color:#edd8f4;"> <i
+                class="fa fa-book fa-fw"></i></h2>
+            <a href="./std-account.html" style="text-decoration: none;">
+              <div class="db-card-text p-2">
+                <h5 style="color:  #9e3ecc;">Shedule</h5>
+                <p>View Details</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6 pt-3 ">
+        <div class="card  w-100">
+          <div class="card-body db-card-body p-0">
+            <h2 class="card-title db-card-title mt-2 " style="color:#008eff; background-color: #e3f3ff;"> <i
+                class="fa fa-users fa-fw "></i></h2>
+            <a  th:href="@{/StdTeacher}" style="text-decoration: none;">
+              <div class="db-card-text p-2">
+                <h5 style="color: #008eff;">Teachers</h5>
+                <p>View Details</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3 p-3 justify-content-start w-100 part-2">
+      <div class="col-lg-6 col-md-12  mt-3">
+        <div class="card mt-3 p-2">
+          <div class="card-body add-teacher p-0 ">
+            <h5 class="card-title">Your Teachers</h5>
+            <div class="dropdown-divider"></div>
+            <p class="card-text">No Teacher Classes Joined !!</p>
+            <a  th:href="@{/ExploreTeacher}" class="btn join-class-btn">Join Class</a>
+          </div>
+          <div class="added-teacher" style="background-color: white;">
+            <div class="add-items" id="columnB"></div>
+          </div>
+        </div>
+      </div>
+      <!-- recommended teachers -->
+      <div class="col-lg-6 col-md-12  mt-md-3">
+        <div class="your-teacher-box p-3">
+          <div class="sub-title-heading px-3">
+            <h4 class="sub-title">Recommended Teachers</h4>
+            <p id="result"></p>
+            <div id="columnA">
+              <h5 id="subjectDisplay">Your Selection</h5>
+              <div id="selectionButtons"></div>
+            </div>
+          </div>
+          <div class="row your-teacher-body p-3">
+            <div class="col-lg-12" id=" columnA">
+              <div class="teacher-panel p-2 col-12 ">
+                <div class="teacher-panel-header">
+                  <i class="fa-solid fa-circle-user text-center p-0 db-logos"
+                    style="color: #4fb560; font-size: 3rem;"></i>
+                  <div class="header-text pl-2 ">
+                    <h4>Dr Dharmalingam</h4>
+                    <p>21+ Yrs Of Experience</p>
+                  </div>
+                </div>
+                <div class="teacher-panel-body ml-5">
+                  <h6 id="teacher-dip">Mathematics</h6>
+                  <ul class="pl-0">
+                    <h5 class="pr-2">5.0</h5>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  </ul>
+                  <h6 id="course-price"> RS 200 Per hour </h6>
+                  <a  th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+                </div>
+                <button class="addBtn btn btn-primary col-4  mt-1 ml-5">Add +</button>
+              </div>
+              <!--  t-2 -->
+              <div class="teacher-panel col-12 mt-4 p-2">
+                <div class="teacher-panel-header">
+                  <i class="fa-solid fa-circle-user text-center p-0 db-logos"
+                    style="color: #4fb560; font-size: 3rem;"></i>
+                  <div class="header-text pl-2">
+                    <h4>Dr Dharmalingam</h4>
+                    <p>21+ Yrs Of Experience</p>
+                  </div>
+                </div>
+                <div class="teacher-panel-body ml-5">
+                  <h6 id="teacher-dip">Mathematics</h6>
+                  <ul class="pl-0">
+                    <h5 class="pr-2">5.0</h5>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  </ul>
+                  <h6 id="course-price"> RS 200 Per hour </h6>
+                  <a  th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+                </div>
+                <button class="addBtn btn btn-primary col-4  mt-1 ml-5">Add +</button>
+              </div>
+              <!-- t-2 -->
+              <div class="teacher-panel col-12 mt-4 p-2">
+                <div class="teacher-panel-header">
+                  <i class="fa-solid fa-circle-user text-center p-0 db-logos"
+                    style="color: #4fb560; font-size: 3rem;"></i>
+                  <div class="header-text pl-2">
+                    <h4>Dr Dharmalingam</h4>
+                    <p>21+ Yrs Of Experience</p>
+                  </div>
+                </div>
+                <div class="teacher-panel-body ml-5">
+                  <h6 id="teacher-dip">Mathematics</h6>
+                  <ul class="pl-0">
+                    <h5 class="pr-2">5.0</h5>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  </ul>
+                  <h6 id="course-price"> RS 200 Per hour </h6>
+                  <a  th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+                </div>
+                <button class="addBtn btn btn-primary col-4  mt-1 ml-5">Add +</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+  </div>
+  <!-- model start -------------------------------------------------------------------------------->
+  <!-- First Modal -->
+  <div class="modal fade" id="classModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select for Classes</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="classSelect" class="form-control">
+            <option value="school">School</option>
+            <option value="college">College</option>
+            <option value="programming">Programming</option>
+            <option value="languages">Languages</option>
+            <option value="curricular">Curricular Activities</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="classSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- School Modal -->
+  <div class="modal fade" id="schoolModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Class</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="schoolClassSelect" class="form-control">
+            <option value="class5">Class 5</option>
+            <option value="class6">Class 6</option>
+            <option value="class7">Class 7</option>
+            <option value="class8">Class 8</option>
+            <option value="class9">Class 9</option>
+            <option value="class10">Class 10</option>
+            <option value="class11">Class 11</option>
+            <option value="class12">Class 12</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="schoolClassSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Subject Modal -->
+  <div class="modal fade" id="subjectModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Subject</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="subjectSelect" class="form-control">
+            <!-- Options will be populated dynamically based on previous selection -->
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="subjectSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Science Modal -->
+  <div class="modal fade" id="scienceModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Science Subject</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="scienceSelect" class="form-control">
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="maths">Maths</option>
+            <option value="biology">Biology</option>
+            <option value="zoology">Zoology</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="scienceSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Programming Modal -->
+  <div class="modal fade" id="programmingModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Programming Language</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="programmingSelect" class="form-control">
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="c++">C++</option>
+            <option value="c">C</option>
+            <option value="fullstack_java">Fullstack Java</option>
+            <option value="fullstack_python">Fullstack Python</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="programmingSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Curricular Activities Modal -->
+  <div class="modal fade" id="curricularModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select Curricular Activity</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="curricularSelect" class="form-control">
+            <option value="dance">Dance</option>
+            <option value="singing">Singing</option>
+            <option value="flute">Flute</option>
+            <option value="piano">Piano</option>
+            <option value="handwriting">Handwriting</option>
+            <option value="speaking">Speaking</option>
+            <option value="drawing">Drawing</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="curricularSubmit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Result Display -->
+  <!-- model end -------------------------------------------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    var finalChoice = "";
+    var selectionPath = [];
+    // Show the first modal automatically
+    $(document).ready(function () {
+      $('#classModal').modal('show');
+    });
+    // Handle the first modal submit button
+    $('#classSubmit').on('click', function () {
+      var choice = $('#classSelect').val();
+      finalChoice = choice.charAt(0).toUpperCase() + choice.slice(1);
+      $('#classModal').modal('hide');
+      // Update selection path
+      selectionPath = [finalChoice];
+      updateSelectionButtons();
+      if (choice === 'school') {
+        $('#schoolModal').modal('show');
+      } else if (choice === 'college') {
+        populateSubjects(['Science', 'Arts']);
+        $('#subjectModal').modal('show');
+      } else if (choice === 'programming') {
+        $('#programmingModal').modal('show');
+      } else if (choice === 'languages') {
+        populateSubjects(['Tamil', 'Malayalam', 'English', 'Hindi', 'Telugu']);
+        $('#subjectModal').modal('show');
+      } else if (choice === 'curricular') {
+        $('#curricularModal').modal('show');
+      }
+    });
+    // Handle the school class submit button
+    $('#schoolClassSubmit').on('click', function () {
+      var schoolClass = $('#schoolClassSelect').val();
+      finalChoice += " : " + schoolClass.replace('class', 'Class ');
+      $('#schoolModal').modal('hide');
+      // Update selection path
+      selectionPath.push(schoolClass.replace('class', 'Class '));
+      updateSelectionButtons();
+      if (schoolClass === 'class11' || schoolClass === 'class12') {
+        populateSubjects(['Language', 'Arts', 'Science']);
+        $('#subjectModal').modal('show');
+      } else {
+        populateSubjects(['Tamil', 'English', 'Maths', 'Science', 'Social Science']);
+        $('#subjectModal').modal('show');
+      }
+    });
+    // Handle the subject submit button
+    $('#subjectSubmit').on('click', function () {
+      var subject = $('#subjectSelect').val();
+      finalChoice += " : " + subject.charAt(0).toUpperCase() + subject.slice(1);
+      $('#subjectModal').modal('hide');
+      // Update selection path
+      selectionPath.push(subject.charAt(0).toUpperCase() + subject.slice(1));
+      updateSelectionButtons();
+      if (subject === 'language') {
+        populateSubjects(['Tamil', 'English', 'Malayalam', 'Hindi']);
+        $('#subjectModal').modal('show');
+      } else if (subject === 'science') {
+        $('#scienceModal').modal('show');
+      } else if (subject === 'arts') {
+        populateSubjects(['History', 'Commerce', 'Statics', 'Accounts']);
+        $('#subjectModal').modal('show');
+      } else {
+        displayFinalChoice();
+      }
+    });
+    // Handle the science modal submit button
+    $('#scienceSubmit').on('click', function () {
+      var scienceSubjects = $('#scienceSelect').val();
+      finalChoice += " : " + scienceSubjects.charAt(0).toUpperCase() + scienceSubjects.slice(1);
+      $('#scienceModal').modal('hide');
+      // Update selection path with multiple science subjects
+      var subjects = scienceSubjects.split(',');
+      subjects.forEach(function (subject) {
+        var formattedSubject = subject.trim().charAt(0).toUpperCase() + subject.trim().slice(1);
+        if (!selectionPath.includes(formattedSubject)) {
+          selectionPath.push(formattedSubject);
+        }
+      });
+      updateSelectionButtons();
+      displayFinalChoice();
+    });
+    // Handle the programming submit button
+    $('#programmingSubmit').on('click', function () {
+      var programmingChoice = $('#programmingSelect').val();
+      finalChoice += " : " + programmingChoice;
+      $('#programmingModal').modal('hide');
+      displayFinalChoice();
+    });
+    // Handle the curricular activities submit button
+    $('#curricularSubmit').on('click', function () {
+      var curricularChoice = $('#curricularSelect').val();
+      finalChoice += " :" + curricularChoice;
+      $('#curricularModal').modal('hide');
+      displayFinalChoice();
+    });
+    // Function to populate subject options dynamically
+    function populateSubjects(options) {
+      var subjectSelect = $('#subjectSelect');
+      subjectSelect.empty();
+      options.forEach(function (option) {
+        subjectSelect.append('<option value="' + option.toLowerCase() + '">' + option + '</option>');
+      });
+    }
+    // Function to update selection path buttons
+    function updateSelectionButtons() {
+      var buttonsContainer = $('#selectionButtons');
+      buttonsContainer.empty();
+      selectionPath.forEach(function (path) {
+        buttonsContainer.append('<button class="btn btn-secondary mr-2">' + path + '</button>');
+      });
+    }
+    // Function to display the final choice
+    function displayFinalChoice() {
+      // Update teacher-dip with the last selection
+      $('#teacher-dip').text(finalChoice.split(' : ').pop().trim());
+      // Show alert with the final choice
+      alert("Final Selection: " + finalChoice);
+    }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const addBtns = document.querySelectorAll('.addBtn');
+      const columnB = document.getElementById('columnB');
+      addBtns.forEach((button, index) => {
+        const parentCol = button.parentElement;
+        parentCol.dataset.cloneId = index; // Assign a unique clone ID to each column
+        button.addEventListener('click', function () {
+          // Check if this column is already added to Column B
+          if (columnB.querySelector(`[data-clone-id="${parentCol.dataset.cloneId}"]`)) {
+            return;
+          }
+          // Clone the content of the selected column
+          const clonedContent = parentCol.cloneNode(true);
+          clonedContent.dataset.cloneId = parentCol.dataset.cloneId;
+          // Apply border and box shadow styles to the cloned 
+          clonedContent.style.marginTop = '10px'
+          clonedContent.style.borderRadius = '10px ';
+          clonedContent.style.boxShadow = 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px';
+          // Remove the add button from the cloned content
+          clonedContent.querySelector('.addBtn').remove();
+          // Create a remove button for the cloned content
+          const removeBtn = document.createElement('button');
+          removeBtn.className = 'btn btn-danger mt-2 remove-btn';
+          removeBtn.innerText = 'Remove';
+          removeBtn.style.width = '40%';
+          // Append the remove button to the cloned content
+          clonedContent.appendChild(removeBtn);
+          // Append the cloned content to Column B
+          columnB.appendChild(clonedContent);
+          // Add an event listener to the remove button
+          removeBtn.addEventListener('click', function () {
+            // Remove the cloned content from Column B
+            columnB.removeChild(clonedContent);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

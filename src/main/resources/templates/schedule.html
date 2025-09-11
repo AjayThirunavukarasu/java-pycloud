@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Schedule</title>
+    <!-- Bootstrap CSS -->
+     <!-- <link rel="stylesheet" href="../static/css/std-teacherNew.css">
+     <link rel="stylesheet" href="../static/css/stddashboard.css"> -->
+     <link rel="stylesheet" th:href="@{/css/std-teacherNew.css}">
+     <link rel="stylesheet" th:href="@{/css/stddashboard.css}">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+    <style>
+        .std-nav{
+            margin-left: auto;
+        }
+        .details{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .grid-container {
+            width: 700px;
+            height: 500px;
+            display: grid;
+            grid-template-rows: repeat(5, 1fr); /* 8 rows */
+            grid-template-columns: repeat(6, 1fr); /* 6 columns */
+        }
+        .grid-box {
+            border: 1px solid black;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-radius: 10px;
+            background-color: #c0feb4;
+        }
+        .grid-box.day{
+            color: white;
+            font-weight: 600;
+            font-family: serif;
+            background-color: #40E0D0 ;
+            font-size: 20px;
+
+        }
+        .grid-box.time{
+            color: white;
+            font-weight: 600;
+            font-family: serif;
+            background-color: #40E0D0 ;
+            font-size: 17px;
+        }
+        .schedule-box p {
+            margin: 0;
+            font-size: 15px;
+            text-align: center;
+            color: #34495e;
+        }
+        .minus-btn {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            font-size: 12px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 fixed">
+        <a class="navbar-brand mx-2" href="../Main/index.html">
+            <h2 style="color: orangered;">TN <span style="color: #102c58;">-Tuitions</span></h2>
+          </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav std-nav ml-5">
+              <a class="nav-item nav-link  "  th:href="@{/StdAccount}"><i class="fa-solid fa-circle-user"
+                style="color: #4fb560;"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/StdNotification}"><i class="fa-regular fa-bell text-center"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/home}"><i
+                class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </div>
+        </div>
+      </nav>
+
+      <!-- teacher  -->
+      <div class="dashboard content   "  >
+        <div class="container mt-5">
+            <!-- 8x6 Grid Container with Fixed Width and Height -->
+            <div class="grid-container mx-auto">
+                <div class="grid-box"></div>
+                <div class="grid-box day">Monday</div>
+                <div class="grid-box day">Tuesday</div>
+                <div class="grid-box day">Wednesday</div>
+                <div class="grid-box day">Thursday</div>
+                <div class="grid-box day">Friday</div>
+                <div class="grid-box time">9:00 -11:00 AM</div>
+                <div class="grid-box" id="Monday-9"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Tuesday-9"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Wednesday-9"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Thursday-9"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Friday-9"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box time">11:00-1:00 PM</div>
+                <div class="grid-box" id="Monday-11"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Tuesday-11"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Wednesday-11"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Thursday-11"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Friday-11"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box time">2:00 -4:00 PM</div>
+                <div class="grid-box" id="Monday-2"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Tuesday-2"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Wednesday-2"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Thursday-2"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Friday-2"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box  time">4:00 -6:00 PM</div>
+                <div class="grid-box" id="Monday-4"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Tuesday-4"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Wednesday-4"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Thursday-4"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+                <div class="grid-box" id="Friday-4"><p></p><button class="btn btn-danger minus-btn">-</button></div>
+            </div>
+            <div class="row "> 
+                <div class="col-lg-12 details px-5 justify-content-center ">
+              <div class="col-lg-6 mt-5">
+                  <textarea class="form-control" id="schedule-text" rows="3" placeholder="Enter your schedule text"></textarea>
+                     <button class="btn btn-primary mt-3" id="add-btn">Add Plan</button>
+                </div>
+              <div class=" col-lg-6 p-3 ">
+                  <label for="day-select" class="form-label">Select Day:</label>
+                  <select class="form-select" id="day-select">
+                      <option value="Monday">Monday</option>
+                      <option value="Tuesday">Tuesday</option>
+                      <option value="Wednesday">Wednesday</option>
+                      <option value="Thursday">Thursday</option>
+                      <option value="Friday">Friday</option>
+                  </select>
+                  <label for="time-select" class="form-label">Select Time:</label>
+                  <select class="form-select" id="time-select">
+                      <option value="9">9:00 - 11:00 AM</option>
+                      <option value="11">11:00 - 1:00 PM</option>
+                      <option value="2">2:00 - 4:00 PM</option>
+                      <option value="4">4:00 - 6:00 PM</option>
+                  </select>
+              </div>
+             
+             
+           <div class="col-lg-6 p-3">
+               
+            </div>
+          </div></div>
+       
+        </div>
+       
+
+        
+              <!--  -->
+       
+    </div>
+       <!-- end -->
+           <!-- sidebar start -->
+  <div class="navbar sidebar p-0 m-0" style="background-color: #102c58;">
+    <div class="navbar-nav  w-100 mb-5">
+      <a class="nav-item nav-link text-center " 
+      th:href="@{/StdDashboard}"><span><i class="fa-solid fa-address-card db-logos"></i></span>Dash Board</a>
+    <a class="nav-item nav-link text-center " href="#" style="background-color: orangered;"><span><i
+          class="fa-solid fa-calendar-days db-logos" ></i></span>My Shedule</a>
+    <a class="nav-item nav-link text-center "  th:href="@{/StdTeacher}"><span><i
+          class="fa-solid fa-user-tie db-logos"></i></span>Teachers</a>
+    <a class="nav-item nav-link text-center"  th:href="@{/StdAccount}"> <span><i
+          class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560;"></i></span>My Account</a>
+    <a class="nav-item nav-link "  th:href="@{/ExploreTeacher}"><span><i
+          class="fa-sharp-duotone fa-solid fa-magnifying-glass db-logos"></i></span>Explore Teacher</a>
+        
+
+    </div>
+</div>
+    <!-- sidebar end -->
+      
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#add-btn').click(function(){
+                var day = $('#day-select').val();
+                var time = $('#time-select').val();
+                var text = $('#schedule-text').val();
+                var targetBox = $('#' + day + '-' + time);
+                
+                // Add text to the selected schedule box
+                targetBox.find('p').text(text);
+                targetBox.find('.minus-btn').show(); // Show the minus button
+                
+                // Clear the textarea after adding
+                $('#schedule-text').val('');
+            });
+            
+            // Remove text when minus button is clicked
+            $('.minus-btn').click(function(){
+                $(this).siblings('p').text('');
+                $(this).hide(); // Hide the minus button after removal
+            });
+        });
+    </script>
+
+   
+  </body>
+</html>

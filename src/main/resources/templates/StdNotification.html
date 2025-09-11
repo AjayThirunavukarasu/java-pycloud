@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org" >
+  <head>
+    <title>Notifications</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/css/stddashboard.css}">
+     <link rel="stylesheet" th:href="@{/css/std-notification.css}">
+     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 fixed">
+        <a class="navbar-brand mx-2" href="#">
+            <h2 style="color: orangered;">TN <span style="color: #102c58;">-Tuitions</span></h2>
+          </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav std-nav ml-auto">
+              <a class="nav-item nav-link  "  th:href="@{/StdAccount}"><i class="fa-solid fa-circle-user"
+                style="color: #4fb560;"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/StdNotification}"><i class="fa-regular fa-bell text-center"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/home}"><i
+                class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </div>
+        </div>
+      </nav>
+
+
+        <!-- dashboard start -->
+     
+          
+        
+        <div class="dashboard content "  >
+        
+            <div class="row  ">
+                <div class="col-lg-11 col-md-10">
+                    <div class="std-notication m-3 mt-5 pb-3 col-lg-12">
+                        <div class="title-heading px-5">
+                            <h3>Notications</h3>
+                        </div>
+                    
+                    <div class=" notification-body m-5 mb-4  ">
+                        
+                            <div class="time col-lg-3 col-12 text-center p-3">
+                                <p class="p-0" style="color: blue; font-weight: 600;">23 , </p>
+                                <p class="p-0">JUL-2021 , </p>
+                                <P class="p-0" style="color: green;">11:45:00 AM</P>
+                            </div>
+                            <div class="message col-lg-9 col-12 p-3">
+                                       <h4>Effective Ways To Learning</h4>
+                                       <p>Whether you are a student in school or a university graduate pursuing a specialization course, 
+                                        one challenge which remains a constant for all, is to find quick methods to learn concepts. </p>
+                            </div>
+                            
+        
+                        
+    
+                    </div>
+                
+            
+                </div>
+            </div>
+            </div>
+               
+    
+            
+            
+        </div>
+      
+            <!-- dashboard end -->
+               <!-- sidebar start -->
+  <div class="navbar sidebar position-fixed p-0 m-0" style="background-color: #102c58;">
+    <div class="navbar-nav  w-100 m-0">
+      <a class="nav-item nav-link text-center " 
+      href="../studentprofile/std-dashboardNew.html"><span><i class="fa-solid fa-address-card db-logos"></i></span>Dash Board</a>
+    <a class="nav-item nav-link text-center " th:href="@{/schedule}" ><span><i
+          class="fa-solid fa-calendar-days db-logos"></i></span>My Schedule</a>
+    <a class="nav-item nav-link text-center "  th:href="@{/StdTeacher}"><span><i
+          class="fa-solid fa-user-tie db-logos"></i></span>Teachers</a>
+    <a class="nav-item nav-link text-center"  th:href="@{/StdAccount}"> <span><i
+          class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560;"></i></span>My Account</a>
+    <a class="nav-item nav-link "  th:href="@{/ExploreTeacher}"><span><i
+          class="fa-sharp-duotone fa-solid fa-magnifying-glass db-logos"></i></span>Explore Teacher</a>
+
+    </div>
+</div>
+    <!-- sidebar end -->
+      
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

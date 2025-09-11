@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Teacher</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" th:href="@{/css/std-teacherNew.css}">
+     <link rel="stylesheet" th:href="@{/css/stddashboard.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0 fixed">
+        <a class="navbar-brand mx-2" href="../Main/index.html">
+            <h2 style="color: orangered;">TN <span style="color: #102c58;">-Tuitions</span></h2>
+          </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <div class="navbar-nav std-nav ml-auto">
+              <a class="nav-item nav-link  "  th:href="@{/StdAccount}"><i class="fa-solid fa-circle-user"
+                style="color: #4fb560;"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/StdNotification}"><i class="fa-regular fa-bell text-center"></i></a>
+            <a class="nav-item nav-link  "  th:href="@{/home}"><i
+                class="fa-solid fa-arrow-right-from-bracket"></i></a>
+              </div>
+        </div>
+      </nav>
+
+      <!-- teacher  -->
+      <div class="dashboard content   std-teacher"  >
+        
+       
+
+        <div class="row mt-3 justify-content-start w-100">
+          <div class="col-lg-5  mt-3 " >
+            <div class="card mt-3" > 
+              <div class="card-body">
+                <h5 class="card-title">Your Teachers</h5>
+                <div class="dropdown-divider"></div>
+                <p class="card-text">No Teacher Classes Joined !!</p>
+                <a href="../studentprofile/std-dashboardNew.html" class="btn join-class-btn" >Join Class</a>
+              </div>
+              <div class="added-teacher" style="background-color: white;">
+                <div class="add-items" id="columnB"></div>
+              </div>
+            </div>
+          </div>
+          <!-- recommended teachers -->
+          <div class="col-lg-7 col-md-12 col-12  mt-md-3">
+            <div class="your-teacher-box p-3">
+              <div class="sub-title-heading px-3">
+                <h4 class="sub-title">Recommended Teachers</h4>
+              </div>
+            
+            <div class="row your-teacher-body p-3">
+              <div class="col-lg-12  " id=" columnA">
+               <div class="teacher-panel p-2 col-lg-12 "> <!--  teacher panel -->
+              <div class="teacher-panel-header">
+                <i class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560; font-size: 3rem;"></i>
+                <div class="header-text p-1">
+                  <h4>Dr Dharmalingam</h4>
+                  <p>21+ Yrs Of Experience</p>
+                </div>
+               
+              </div>
+              <div class="teacher-panel-body ml-5">
+                <h6>Mathematics</h6>
+                <ul class="pl-0">
+                  <h5 class="pr-2">5.0</h5>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                 
+                </ul>
+                <h6 id="course-price"> RS 200 Per hour </h6>
+                <a th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+              
+                
+              </div>
+              <button class="addBtn btn btn-primary col-4  mt-1 ml-5">Add +</button>
+              
+            </div>
+             <!--  t-2 -->
+            <div class="teacher-panel col-lg-12 mt-4 p-2">
+              <div class="teacher-panel-header">
+                <i class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560; font-size: 3rem;"></i>
+                <div class="header-text p-1">
+                  <h4>Dr Dharmalingam</h4>
+                  <p>21+ Yrs Of Experience</p>
+                </div>
+               
+              </div>
+                        
+              <div class="teacher-panel-body ml-5">
+                <h6>Mathematics</h6>
+                <ul class="pl-0">
+                  <h5 class="pr-2">5.0</h5>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                  <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                 
+                </ul>
+                <h6 id="course-price"> RS 200 Per hour </h6>
+                <a th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+              </div>
+              <button class="addBtn btn btn-primary col-4 mt-1 ml-5">Add +</button>
+            </div>
+              <!-- t-2 -->
+              <div class="teacher-panel col-lg-12 mt-4 p-2">
+                <div class="teacher-panel-header">
+                  <i class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560; font-size: 3rem;"></i>
+                  <div class="header-text p-1">
+                    <h4>Dr Dharmalingam</h4>
+                    <p>21+ Yrs Of Experience</p>
+                  </div>
+                 
+                </div>
+                          
+                <div class="teacher-panel-body  ml-5">
+                  <h6>Mathematics</h6>
+                  <ul class="pl-0">
+                    <h5 class="pr-2">5.0</h5>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                    <li><i class="fa fa-star mr-1 text-warning"></i></li>
+                   
+                  </ul>
+                  <h6 id="course-price"> RS 200 Per hour </h6>
+                  <a th:href="@{/TeacherDashboard}" class="pt-2">more detais</a>
+                </div>
+                <button class="addBtn btn btn-primary col-4 mt-1 ml-5">Add +</button>
+              </div>
+          </div>
+
+            </div>
+          </div>
+
+
+           
+        </div>
+        </div>
+              <!--  -->
+       
+    </div>
+       <!-- end -->
+           <!-- sidebar start -->
+  <div class="navbar sidebar p-0 m-0" style="background-color: #102c58;">
+    <div class="navbar-nav  w-100 mb-5">
+      <a class="nav-item nav-link text-center " 
+      th:href="@{/StdTeacher}"><span><i class="fa-solid fa-address-card db-logos"></i></span>Dash Board</a>
+    <a class="nav-item nav-link text-center " th:href="@{/schedule}"><span><i
+          class="fa-solid fa-calendar-days db-logos"></i></span>My Schedule</a>
+    <a class="nav-item nav-link text-center " style="background-color: orangered;" th:href="@{/StdTeacher}"><span><i
+          class="fa-solid fa-user-tie db-logos"></i></span>Teachers</a>
+    <a class="nav-item nav-link text-center"  th:href="@{/StdAccount}"> <span><i
+          class="fa-solid fa-circle-user text-center p-0 db-logos" style="color: #4fb560;"></i></span>My Account</a>
+    <a class="nav-item nav-link "  th:href="@{/ExploreTeacher}"><span><i
+          class="fa-sharp-duotone fa-solid fa-magnifying-glass db-logos"></i></span>Explore Teacher</a>
+        
+
+    </div>
+</div>
+    <!-- sidebar end -->
+      
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const addBtns = document.querySelectorAll('.addBtn');
+        const columnB = document.getElementById('columnB');
+        addBtns.forEach((button, index) => {
+          const parentCol = button.parentElement;
+          parentCol.dataset.cloneId = index; // Assign a unique clone ID to each column
+          button.addEventListener('click', function () {
+            // Check if this column is already added to Column B
+            if (columnB.querySelector(`[data-clone-id="${parentCol.dataset.cloneId}"]`)) {
+              return;
+            }
+            // Clone the content of the selected column
+            const clonedContent = parentCol.cloneNode(true);
+            clonedContent.dataset.cloneId = parentCol.dataset.cloneId;
+            // Apply border and box shadow styles to the cloned 
+            clonedContent.style.marginTop = '10px'
+            clonedContent.style.borderRadius = '10px ';
+            clonedContent.style.boxShadow = 'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px';
+            // Remove the add button from the cloned content
+            clonedContent.querySelector('.addBtn').remove();
+            // Create a remove button for the cloned content
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'btn btn-danger mt-2 remove-btn';
+            removeBtn.innerText = 'Remove';
+            removeBtn.style.width = '40%';
+            // Append the remove button to the cloned content
+            clonedContent.appendChild(removeBtn);
+            // Append the cloned content to Column B
+            columnB.appendChild(clonedContent);
+            // Add an event listener to the remove button
+            removeBtn.addEventListener('click', function () {
+              // Remove the cloned content from Column B
+              columnB.removeChild(clonedContent);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
