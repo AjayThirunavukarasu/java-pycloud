@@ -13,3 +13,7 @@ create databse webapp;
 
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 FLUSH PRIVILEGES;
+
+RUN Java Background:
+
+nohup java -jar registration-login-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
